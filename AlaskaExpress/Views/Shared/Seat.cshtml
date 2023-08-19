@@ -1,0 +1,45 @@
+﻿@model List<AlaskaExpress.Models.ButtonModel>
+@{
+    ViewBag.Title = "Seat";
+}
+
+<div class="row mx-5">
+
+    <h2>Seat</h2>
+    <br />
+    <br />
+    <br />
+
+    <div style="text-align:center">
+        @using (Html.BeginForm("HandleSeatClick", "Bus"))
+        {
+            for (int i = 0; i < Model.Count; i++)
+            {
+                if (i % 4 == 0)
+                {
+                    <br />
+                }
+                <button type="submit" name="mine" value=@i>
+                    @if (Model[i].State == 0)
+                    {
+                        <img src="~/Images/Black.png" />
+                    }
+                    else if (Model[i].State == 1)
+                    {
+                        <img src="~/Images/Blue.png" />
+                    }
+                    else
+                    {
+                        <img src="~/Images/Red.png" />
+                    }
+                </button>
+            }
+        }
+    </div>
+
+    <br />
+    <br />
+    <br />
+</div>
+
+

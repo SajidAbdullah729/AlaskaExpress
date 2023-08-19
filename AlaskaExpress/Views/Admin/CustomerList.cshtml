@@ -1,0 +1,71 @@
+﻿@model IEnumerable<AlaskaExpress.Models.Customer>
+
+@{
+    ViewBag.Title = "CustomerList";
+}
+
+<div class="row mx-5">
+
+    <h2>Customer List</h2>
+    <p></p>
+    <p></p>
+
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer_email)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer_fullname)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer_dob)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer_address)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer_phone)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Customer_nid)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer_email)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer_fullname)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer_dob)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer_address)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer_phone)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Customer_nid)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Back to Home", "")
+    </div>
+
+    <br />
+    <br />
+    <br />
+</div>

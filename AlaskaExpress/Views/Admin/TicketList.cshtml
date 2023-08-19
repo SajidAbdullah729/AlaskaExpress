@@ -1,0 +1,73 @@
+﻿@model IEnumerable<AlaskaExpress.Models.Ticket>
+
+@{
+    ViewBag.Title = "TicketList";
+}
+<div class="row mx-5">
+    <h2>Ticket List</h2>
+    <br />
+
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Schedule_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bus_seats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Customer_email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TXN_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ticket_state)
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ticket_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Schedule_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Bus_seats)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer_email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Total_price)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TXN_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ticket_state)
+                </td>
+            </tr>
+        }
+
+    </table>
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Back to Home", "")
+    </div>
+
+    <br />
+    <br />
+    <br />
+</div>
+
+

@@ -1,0 +1,56 @@
+﻿@model AlaskaExpress.Models.Schedule
+
+@{
+    ViewBag.Title = "TicketPending";
+    int total = (ViewBag.costPerSeat) * (ViewBag.seatCounterforTicket);
+    ViewBag.totalPrice = total + " BDT";
+    ViewBag.userEmail = Session["userEmail"];
+}
+<form action="/Customer/TicketComplete" method="post">
+    <div class="row mx-5">
+
+        <div class="col-xs-10 col-sm-10 col-md-4 col-lg-4 my-5">
+            <h2>TicketPending</h2>
+            <div>
+                Schedule ID: <b>@Model.Schedule_id</b> <br />
+                <input name="scheduleID" value=@Model.Schedule_id hidden>
+                <input name="userEmail" value=ViewBag.userEmail hidden>
+                Journey From: <b>@ViewBag.startLocation</b>  <br />
+                Journey To: <b>@ViewBag.endLocation</b>  <br />
+                Journey Date: <b>@Model.Bus_journet_day</b>  <br />
+                Journey Time: <b>@Model.Bus_journey_time</b>  <br />
+                Coach: <b>@ViewBag.coach</b>  <br />
+                Bus: <b>@ViewBag.numberplate</b>  <br />
+                Seats: <b>@ViewBag.selectedAllSeatsforTicket</b>  <br />
+                <input name="selectedAllSeatsforTicket" value=@ViewBag.selectedAllSeatsforTicket hidden>
+                Total Price: <h4 style="color:blue">@ViewBag.totalPrice</h4>  <br />
+                <input name="calculatedTotalprice" value=@ViewBag.totalPrice hidden>
+
+            </div>
+        </div>
+
+        <div class="col-xs-10 col-sm-10 col-md-8 col-lg-8 my-5">
+            <h4>Send total price from your mobile account into any of the following numbers</h4>
+            <hr />
+            <h3><img src="~/Images/rocket.png" />     01824442479</h3>
+            <hr />
+            <h3><img src="~/Images/nagad.png" />     01832282805</h3>
+            <hr />
+            <h3><img src="~/Images/bkash.png" />     01777679127</h3>
+            <hr />
+            <h4>Then enter the TXN ID below and complete your purchase</h4>
+            <label for="txnId" class="form-label">TXN ID</label>
+            <input type="text" class="form-control" style="width:100%" name="txnId" id="txnId" required minlength="0" />
+
+            <div class="py-3">
+                <button type="submit" class="btn btn-primary" name="buttonForCompletePurchase">Complete Purchase</button>
+            </div>
+        </div>
+
+    </div>
+</form>
+
+<br />
+<br />
+<br />
+

@@ -1,0 +1,84 @@
+﻿@{
+    ViewBag.Title = "FindBus";
+}
+
+<div class="row mx-5">
+    <div class="col-xs-1 col-sm-1 col-md-3 col-lg-2"></div>
+    <div class="col-xs-10 col-sm-10 col-md-6 col-lg-8 my-5">
+
+        <h2>Search Bus</h2>
+        <form action="/Customer/SearchedBus" method="post">
+
+            <div class="col-8 py-3">
+                <label for="inputJourneyFrom" class="form-label">Start location</label>
+
+                <select for="startLoc" class="form-label" id="startLoc">
+                    <option value="" selected disabled>Select</option>
+                    @foreach (var item in ViewBag.startLocation)
+                    {
+                        <option value="item">@item</option>
+                    }
+                </select>
+
+                <input type="text" class="form-control" name="inputJourneyFrom" id="inputJourneyFrom">
+            </div>
+
+            <div class="col-8 py-3">
+                <label for="inputJourneyTo" class="form-label">End location</label>
+
+                <select for="endLoc" class="form-label" id="endLoc">
+                    <option value="" selected disabled>Select</option>
+                    @foreach (var item in ViewBag.endLocation)
+                    {
+                        <option value="item">@item</option>
+                    }
+                </select>
+
+                <input type="text" class="form-control" name="inputJourneyTo" id="inputJourneyTo">
+            </div>
+
+            <div class="py-3">
+                <label for="inputJourneyDate" class="form-label">Journey Date</label>
+                <input type="date" class="form-control" id="inputJourneyDate" name="inputJourneyDate" required minlength="0">
+            </div>
+
+            <div class="py-3">
+                <button type="submit" class="btn btn-primary" value="Search" name="buttonForBusSearch" id="buttonForBusSearch">Find</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-xs-1 col-sm-1 col-md-3 col-lg-2"></div>
+</div>
+
+<br>
+<br>
+<br>
+
+
+
+@Scripts.Render("~/bundles/jquery")
+<script>
+
+    //show dropdown values in text box
+    $(function () {
+        $("#startLoc").change(function () {
+            var startLocValue = $("#startLoc option:selected").text();
+            $("#inputJourneyFrom").val(startLocValue);
+        })
+
+        $("#endLoc").change(function () {
+            var endLocValue = $("#endLoc option:selected").text();
+            $("#inputJourneyTo").val(endLocValue);
+        })
+    })
+
+    //disable old dates
+    var today = new Date();
+    var dd = String(today.getDate()).padStart(2, '0');
+    var mm = String(today.getMonth() + 1).padStart(2, '0');
+    var yyyy = today.getFullYear();
+
+    today = yyyy + '-' + mm + '-' + dd;
+    $('#inputJourneyDate').attr('min', today);
+
+</script>

@@ -1,0 +1,88 @@
+﻿@model AlaskaExpress.Models.Customer
+
+@{
+    ViewBag.Title = "MyProfile";
+}
+
+<div class="row mx-5">
+    <div class="col-xs-1 col-sm-1 col-md-3 col-lg-2"></div>
+    <div class="col-xs-10 col-sm-10 col-md-6 col-lg-8 my-5">
+
+        <h2>My Profile</h2>
+
+        <br />
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                @Html.HiddenFor(model => model.Customer_email)
+
+                <div class="form-group py-2">
+                    @Html.LabelFor(model => model.Customer_password, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Customer_password, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Customer_password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group py-2">
+                    @Html.LabelFor(model => model.Customer_fullname, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Customer_fullname, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Customer_fullname, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group py-2" hidden>
+                    @Html.LabelFor(model => model.Customer_dob, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Customer_dob, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Customer_dob, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group py-2">
+                    @Html.LabelFor(model => model.Customer_address, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Customer_address, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Customer_address, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group py-2">
+                    @Html.LabelFor(model => model.Customer_phone, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Customer_phone, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Customer_phone, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group py-2">
+                    @Html.LabelFor(model => model.Customer_nid, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Customer_nid, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Customer_nid, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group py-2">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Save" class="btn btn-primary" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+    <div class="col-xs-1 col-sm-1 col-md-3 col-lg-2"></div>
+</div>
+
+<div class="row mx-5">
+    @Html.ActionLink("Back to Home", "")
+    <br />
+    <br />
+    <br />
+</div>

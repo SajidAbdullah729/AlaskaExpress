@@ -1,0 +1,56 @@
+﻿@model AlaskaExpress.Models.Seller
+
+@{
+    ViewBag.Title = "DeleteSeller";
+}
+
+
+<div class="row mx-5">
+    <h2>Delete Seller</h2>
+
+    <form action="/Manager/DeleteSeller" method="post">
+        <div class="form-group pb-3">
+            <label for="">Enter seller's email</label>
+            <input type="text" class="form-control" id="txtdelete" placeholder="Email" name="Seller_email">
+        </div>
+        <button class="btn btn-danger m-3">Delete</button>
+    </form>
+
+    <br />
+    <br />
+    <br />
+
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>Seller Email</th>
+                <th>Seller Fullname</th>
+                <th>Seller Address</th>
+                <th>Seller NID</th>
+                <th>Seller Phone</th>
+                <th>Seller Added By</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.sellers)
+            {
+                <tr>
+                    <td>@item.Seller_email</td>
+                    <td>@item.Seller_fullname</td>
+                    <td>@item.Seller_address</td>
+                    <td>@item.Seller_nid</td>
+                    <td>@item.Seller_phone</td>
+                    <td>@item.Seller_addedby</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Back to List", "SellerList")
+    </div>
+
+    <br />
+    <br />
+    <br />
+</div>

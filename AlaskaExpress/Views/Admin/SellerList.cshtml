@@ -1,0 +1,46 @@
+﻿@model List<AlaskaExpress.Models.Seller>
+
+@{
+    ViewBag.Title = "SellerList";
+}
+
+<div class="row mx-5">
+
+    <h2>Seller List</h2>
+    <p></p>
+    <p></p>
+
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>Seller Email</th>
+                <th>Seller Fullname</th>
+                <th>Seller Address</th>
+                <th>Seller NID</th>
+                <th>Seller Phone</th>
+                <th>Seller Added By</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Seller_email</td>
+                    <td>@item.Seller_fullname</td>
+                    <td>@item.Seller_address</td>
+                    <td>@item.Seller_nid</td>
+                    <td>@item.Seller_phone</td>
+                    <td>@item.Seller_addedby</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Back to Home", "")
+    </div>
+
+    <br />
+    <br />
+    <br />
+</div>

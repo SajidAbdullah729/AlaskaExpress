@@ -1,0 +1,58 @@
+﻿@model List<AlaskaExpress.Models.Manager>
+
+@{
+    ViewBag.Title = "ManagerList";
+}
+
+<div class="row mx-5">
+
+    <p></p>
+    <p></p>
+    <h2>Manager List</h2>
+    <p></p>
+    <p></p>
+
+    <p>
+        <a class="btn btn-info" href="/Admin/CreateManager"><b>Add New Manager</b></a>
+        &nbsp;&nbsp;&nbsp;
+        <a class="btn btn-danger" href="/Admin/DeleteManager"><b>Delete Manager</b></a>
+    </p>
+
+    <p></p>
+    <p></p>
+
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>Manager's Email</th>
+                <th>Manager's Fullname</th>
+                <th>Manager's Address</th>
+                <th>Manager's NID</th>
+                <th>Manager's Phone</th>
+                <th>Manager Addedby</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Manager_email</td>
+                    <td>@item.Manager_fullname</td>
+                    <td>@item.Manager_address</td>
+                    <td>@item.Manager_nid</td>
+                    <td>@item.Manager_phone</td>
+                    <td>@item.Manager_addedby</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Back to Home", "")
+    </div>
+
+    <br />
+    <br />
+    <br />
+</div>

@@ -1,0 +1,82 @@
+﻿@model AlaskaExpress.Models.Bus
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Bus</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Bus_start_location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bus_start_location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bus_end_location)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bus_end_location)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bus_total_seat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bus_total_seat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bus_coach)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bus_coach)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bus_cost_per_seat)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bus_cost_per_seat)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bus_journey_time)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bus_journey_time)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bus_journey_day)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bus_journey_day)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Bus_numberplate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Bus_numberplate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Bus_id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

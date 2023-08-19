@@ -1,0 +1,61 @@
+﻿@model AlaskaExpress.Models.Bus
+
+@{
+    ViewBag.Title = "DeleteBus";
+}
+
+
+<div class="row mx-5">
+    <h2>Delete Bus</h2>
+
+    <form action="/Manager/DeleteBus" method="post">
+        <div class="form-group pb-3">
+            @Html.AntiForgeryToken()
+            <label for="">Enter bus id</label>
+            <input type="number" class="form-control" id="txtdelete" placeholder="ID" name="Bus_id">
+        </div>
+        <button class="btn btn-danger m-3">Delete</button>
+    </form>
+
+    <br />
+    <br />
+    <br />
+
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>Bus ID</th>
+                <th>Start Location</th>
+                <th>End Location</th>
+                <th>Cost Per Seat</th>
+                <th>Total Seat</th>
+                <th>Coach</th>
+                <th>Numberplate</th>
+                <th>Addedby</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in ViewBag.buses)
+            {
+                <tr>
+                    <td>@item.Bus_id</td>
+                    <td>@item.Bus_start_location</td>
+                    <td>@item.Bus_end_location</td>
+                    <td>@item.Bus_cost_per_seat</td>
+                    <td>@item.Bus_total_seat</td>
+                    <td>@item.Bus_coach</td>
+                    <td>@item.Bus_numberplate</td>
+                    <td>@item.Bus_addedby</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Back to List", "BusList")
+    </div>
+
+    <br />
+    <br />
+    <br />
+</div>

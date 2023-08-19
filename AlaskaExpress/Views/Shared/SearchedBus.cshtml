@@ -1,0 +1,62 @@
+﻿@model IEnumerable<AlaskaExpress.Models.Schedule>
+
+@{
+    ViewBag.Title = "SearchedBus";
+}
+
+<div class="row mx-5">
+
+    <h2>Searched Bus List</h2>
+
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>Start Location</th>
+                <th>End Location</th>
+                <th>Total Seat</th>
+                <th>Coach</th>
+                <th>Cost Per Seat</th>
+                <th>Journey Time</th>
+                <th>Journey Day</th>
+                <th>Numberplate</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Bus.Bus_start_location
+                    </td>
+                    <td>
+                        @item.Bus.Bus_end_location
+                    </td>
+                    <td>
+                        @item.Bus.Bus_total_seat
+                    </td>
+                    <td>
+                        @item.Bus.Bus_coach
+                    </td>
+                    <td>
+                        @item.Bus.Bus_cost_per_seat
+                    </td>
+                    <td>
+                        @item.Bus_journey_time
+                    </td>
+                    <td>
+                        @Convert.ToString(item.Bus_journet_day).Substring(0, 10)
+                    </td>
+                    <td>
+                        @item.Bus.Bus_numberplate
+                    </td>
+                    <td>
+                        @Html.ActionLink("Check seat availability", "SeatAvailability", "Schedule", new { id = item.Schedule_id }, null)
+                    </td>
+                </tr>
+            }
+        </tbody>
+
+    </table>
+
+</div>

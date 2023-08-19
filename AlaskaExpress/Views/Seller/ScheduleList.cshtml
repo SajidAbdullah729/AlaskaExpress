@@ -1,0 +1,94 @@
+﻿@model List<AlaskaExpress.Models.Schedule>
+
+@{
+    ViewBag.Title = "ScheduleList";
+}
+
+<div class="row mx-5">
+
+    <h2>Schedule List</h2>
+
+    <br />
+    <br />
+    <br />
+
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>Schedule ID</th>
+                <th>Bus Time</th>
+                <th>Bus Date</th>
+                <th>Journey From</th>
+                <th>Journey To</th>
+                <th>A1</th>
+                <th>A2</th>
+                <th>B1</th>
+                <th>B2</th>
+                <th>B3</th>
+                <th>B4</th>
+                <th>C1</th>
+                <th>C2</th>
+                <th>C3</th>
+                <th>C4</th>
+                <th>D1</th>
+                <th>D2</th>
+                <th>D3</th>
+                <th>D4</th>
+                <th>E1</th>
+                <th>E2</th>
+                <th>E3</th>
+                <th>E4</th>
+                <th>F1</th>
+                <th>F2</th>
+                <th>F3</th>
+                <th>F4</th>
+                <th>Bus ID</th>
+                <th>Addedby</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Schedule_id</td>
+                    <td>@item.Bus_journey_time</td>
+                    <td>@item.Bus_journet_day</td>
+                    <td>@item.Bus.Bus_start_location</td>
+                    <td>@item.Bus.Bus_end_location</td>
+                    <td>@item.A1</td>
+                    <td>@item.A2</td>
+                    <td>@item.B1</td>
+                    <td>@item.B2</td>
+                    <td>@item.B3</td>
+                    <td>@item.B4</td>
+                    <td>@item.C1</td>
+                    <td>@item.C2</td>
+                    <td>@item.C3</td>
+                    <td>@item.C4</td>
+                    <td>@item.D1</td>
+                    <td>@item.D2</td>
+                    <td>@item.D3</td>
+                    <td>@item.D4</td>
+                    <td>@item.E1</td>
+                    <td>@item.E2</td>
+                    <td>@item.E3</td>
+                    <td>@item.E4</td>
+                    <td>@item.F1</td>
+                    <td>@item.F2</td>
+                    <td>@item.F3</td>
+                    <td>@item.F4</td>
+                    <td>@item.Bus_id</td>
+                    <td>@item.Schedule_addedby</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="form-actions no-color">
+        @Html.ActionLink("Back to Home", "")
+    </div>
+
+    <br />
+    <br />
+    <br />
+</div>
