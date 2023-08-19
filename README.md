@@ -2,7 +2,7 @@
 
 ## Other contributors:
 - Abdur Rahim Mia https://github.com/Rahim-aust
-- Md. Abdullah Al Sajid Chowdhury https://github.com/SajidAbdullah729
+- Abdullah Al Mamun https://github.com/Mamun1113
 
 ![image](https://user-images.githubusercontent.com/66373332/236641988-419c0327-cd9f-4e56-9cf3-884d7b00b066.png)
 ![image](https://user-images.githubusercontent.com/66373332/236642122-c3a62317-0bcd-4516-8d28-bc5af8de3860.png)
