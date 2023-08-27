@@ -29,6 +29,7 @@ namespace AlaskaExpress.Controllers
 
             List<string> startLocation = new List<string>();
             List<string> endLocation = new List<string>();
+            List<string> endre = new List<string>(); 
 
             foreach (var item in searchedBus)
             {
